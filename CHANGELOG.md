@@ -4,6 +4,14 @@ Todas las modificaciones notables de este proyecto se documentan en este archivo
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.2.0] - 2026-08-08
+
+### Added
+
+- Conteo en vivo de palabras, caracteres y caracteres sin espacios mientras se escribe o pega.
+- Botones de control: **Limpiar**, **Copiar** (resumen al portapapeles) y **Ejemplo** (texto de muestra).
+- Los botones **Limpiar** y **Copiar** se deshabilitan cuando no hay texto.
+
 ## [0.1.0] - 2026-08-08
 
 ### Added
