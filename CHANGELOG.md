@@ -4,6 +4,16 @@ Todas las modificaciones notables de este proyecto se documentan en este archivo
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
 
+El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
+
+## [0.3.0] - 2026-08-08
+
+### Added
+
+- Subida de archivos de texto plano (`js/modules/uploader.js`): lectura como UTF-8 mediante `FileReader`.
+- Zona de subida operable con clic (abre el selector), arrastrar y soltar, y teclado (foco + Enter/Espacio).
+- Al cargar un archivo, el área sustituye su contenido y se recalculan las métricas.
+
 ## [0.2.0] - 2026-08-08
 
 ### Added

@@ -5,6 +5,7 @@
 
 import { qs } from "./utils/dom.js";
 import { getCounts } from "./modules/counter.js";
+import { readTextFile } from "./modules/uploader.js";
 
 const elements = {
   textarea: qs("#texto"),
@@ -14,6 +15,8 @@ const elements = {
   limpiar: qs("#limpiar"),
   copiar: qs("#copiar"),
   ejemplo: qs("#ejemplo"),
+  dropzone: qs("#dropzone"),
+  archivo: qs("#archivo"),
 };
 
 /** Texto de muestra para probar la aplicación. */
@@ -95,9 +98,69 @@ function cargarEjemplo() {
   elements.textarea.focus();
 }
 
+/**
+ * Muestra u oculta el estado visual de arrastre sobre la zona de subida.
+ * @param {boolean} activo El usuario está arrastrando sobre la zona.
+ */
+function setDragover(activo) {
+  elements.dropzone.classList.toggle("is-dragover", activo);
+}
+
+/**
+ * Abre el selector de archivos del sistema al hacer clic en la zona.
+ */
+function abrirSelector() {
+  elements.archivo.click();
+}
+
+/**
+ * Carga un archivo en el área de texto y actualiza la interfaz.
+ * @param {File} file Archivo de texto plano a cargar.
+ */
+async function cargarArchivo(file) {
+  try {
+    const text = await readTextFile(file);
+    elements.textarea.value = text;
+    sync();
+  } catch {
+    /* Archivo ilegible: se ignora y no se cambia el texto. */
+  }
+}
+
 elements.textarea.addEventListener("input", sync);
 elements.limpiar.addEventListener("click", limpiar);
 elements.copiar.addEventListener("click", copiar);
 elements.ejemplo.addEventListener("click", cargarEjemplo);
+
+elements.dropzone.addEventListener("click", abrirSelector);
+elements.dropzone.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    abrirSelector();
+  }
+});
+elements.dropzone.addEventListener("dragenter", (event) => {
+  event.preventDefault();
+  setDragover(true);
+});
+elements.dropzone.addEventListener("dragover", (event) => {
+  event.preventDefault();
+  setDragover(true);
+});
+elements.dropzone.addEventListener("dragleave", (event) => {
+  if (elements.dropzone.contains(event.relatedTarget)) return;
+  setDragover(false);
+});
+elements.dropzone.addEventListener("drop", (event) => {
+  event.preventDefault();
+  setDragover(false);
+  const file = event.dataTransfer.files[0];
+  if (!file) return;
+  cargarArchivo(file);
+});
+elements.archivo.addEventListener("change", () => {
+  cargarArchivo(elements.archivo.files[0]);
+  elements.archivo.value = "";
+});
 
 sync();
