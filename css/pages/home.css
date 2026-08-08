@@ -73,33 +73,30 @@
   display: block;
 }
 
-/* ── Título de página ─────────────────────────────── */
-.page-head {
-  max-width: 62ch;
+/* ── Split view (editor | métricas + subida) ─────────── */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: stretch;
+}
+
+.split__pane--editor {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  padding-block: var(--space-md) 0;
 }
 
-.page-head__title {
-  font-size: var(--text-display);
-  font-weight: 600;
-  overflow-wrap: anywhere;
-  min-width: 0;
-}
-
-.page-head__lede {
-  color: var(--color-ink-2);
-  font-size: var(--text-md);
-  line-height: 1.5;
-}
-
-/* ── Bloque del formulario ────────────────────────── */
-.form-block {
+.split__pane--results {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+@media (max-width: 760px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
 }
 
 /* ── Pie (colophon, Ft4) ──────────────────────────── */

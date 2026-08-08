@@ -4,6 +4,14 @@ Todas las modificaciones notables de este proyecto se documentan en este archivo
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.4.0] - 2026-08-08
+
+### Changed
+
+- Rediseño estructural a **split view**: editor a la izquierda, panel de métricas y subida a la derecha.
+- Se elimina el bloque de título (mono-label + H1 + lede) de la cabecera de la página.
+- En móvil el split apila en orden: editor, métricas y zona de subida.
+
 ## [0.3.1] - 2026-08-08
 
 ### Changed

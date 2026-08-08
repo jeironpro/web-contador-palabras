@@ -53,60 +53,57 @@
       </header>
 
       <main class="site-main" id="contenido">
-        <section class="page-head" aria-labelledby="titulo">
-          <p class="mono-label">CONTADOR · PALABRAS Y LETRAS</p>
-          <h1 class="page-head__title" id="titulo">Cuenta palabras y letras mientras escribes</h1>
-          <p class="page-head__lede">
-            Escribe, pega o sube un archivo de texto plano. Las métricas se
-            actualizan al instante: palabras, caracteres y caracteres sin espacios.
-          </p>
-        </section>
+        <h1 class="visually-hidden">Contador de palabras</h1>
 
-        <section class="form-block" id="como-funciona" aria-labelledby="texto">
-          <div class="text-area">
-            <label class="mono-label" for="texto">Tu texto</label>
-            <textarea
-              class="text-area__field"
-              id="texto"
-              name="texto"
-              rows="12"
-              placeholder="Escribe o pega aquí tu texto, o suelta un archivo en la zona de subida…"
-            ></textarea>
-            <div class="text-area__toolbar">
-              <button type="button" class="btn btn--accent" id="limpiar" disabled>Limpiar</button>
-              <button type="button" class="btn" id="copiar" disabled>Copiar</button>
-              <button type="button" class="btn" id="ejemplo">Ejemplo</button>
+        <section class="split" aria-label="Contador de palabras">
+          <div class="split__pane split__pane--editor">
+            <div class="text-area">
+              <label class="mono-label" for="texto">Tu texto</label>
+              <textarea
+                class="text-area__field"
+                id="texto"
+                name="texto"
+                rows="12"
+                placeholder="Escribe o pega aquí tu texto, o suelta un archivo en la zona de subida…"
+              ></textarea>
+              <div class="text-area__toolbar">
+                <button type="button" class="btn btn--accent" id="limpiar" disabled>Limpiar</button>
+                <button type="button" class="btn" id="copiar" disabled>Copiar</button>
+                <button type="button" class="btn" id="ejemplo">Ejemplo</button>
+              </div>
             </div>
           </div>
 
-          <div class="stats" aria-live="polite">
-            <p class="stat">
-              <span class="stat__value" id="valor-palabras">0</span>
-              <span class="stat__label">Palabras</span>
-            </p>
-            <p class="stat">
-              <span class="stat__value" id="valor-caracteres">0</span>
-              <span class="stat__label">Caracteres</span>
-            </p>
-            <p class="stat">
-              <span class="stat__value" id="valor-sin-espacios">0</span>
-              <span class="stat__label">Caracteres sin espacios</span>
-            </p>
-          </div>
+          <aside class="split__pane split__pane--results">
+            <div class="stats" aria-live="polite">
+              <p class="stat">
+                <span class="stat__value" id="valor-palabras">0</span>
+                <span class="stat__label">Palabras</span>
+              </p>
+              <p class="stat">
+                <span class="stat__value" id="valor-caracteres">0</span>
+                <span class="stat__label">Caracteres</span>
+              </p>
+              <p class="stat">
+                <span class="stat__value" id="valor-sin-espacios">0</span>
+                <span class="stat__label">Caracteres sin espacios</span>
+              </p>
+            </div>
 
-          <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-controls="archivo">
-            <input
-              class="dropzone__input"
-              type="file"
-              id="archivo"
-              accept=".txt,.md,.html,.htm,.css,.js,.json,.csv,.log,.xml,.yaml,.yml,.py,.java,.c,.cpp,.h,.sh,.ini,.cfg,text/*"
-            />
-            <p class="dropzone__title">Suelta un archivo aquí</p>
-            <p class="dropzone__hint">
-              o pulsa para elegirlo. Cualquier archivo de texto plano
-              (.txt, .md, .html, .csv…).
-            </p>
-          </div>
+            <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-controls="archivo">
+              <input
+                class="dropzone__input"
+                type="file"
+                id="archivo"
+                accept=".txt,.md,.html,.htm,.css,.js,.json,.csv,.log,.xml,.yaml,.yml,.py,.java,.c,.cpp,.h,.sh,.ini,.cfg,text/*"
+              />
+              <p class="dropzone__title">Suelta un archivo aquí</p>
+              <p class="dropzone__hint">
+                o pulsa para elegirlo. Cualquier archivo de texto plano
+                (.txt, .md, .html, .csv…).
+              </p>
+            </div>
+          </aside>
         </section>
       </main>
 

@@ -3,11 +3,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  flex: 1;
 }
 
 .text-area__field {
   width: 100%;
-  min-height: 14rem;
+  min-height: 24rem;
+  flex: 1;
   padding: var(--space-lg);
   font-family: var(--font-body);
   font-size: var(--text-md);
@@ -19,6 +21,13 @@
   resize: vertical;
   transition: border-color var(--dur-short) var(--ease-out),
     box-shadow var(--dur-short) var(--ease-out);
+}
+
+@media (max-width: 760px) {
+  .text-area__field {
+    min-height: 12rem;
+    flex: none;
+  }
 }
 
 .text-area__field::placeholder {
