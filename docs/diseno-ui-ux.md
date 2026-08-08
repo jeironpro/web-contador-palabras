@@ -15,7 +15,7 @@
 | Cuerpo | **Source Serif 4** (serif, 400/600) — texto e interfaz |
 | Outlier | **JetBrains Mono** (mono, 400/500) — etiquetas y números de métricas |
 
-Escala (mayor tercera, 1.25): `--text-xs` 0.7rem · `--text-sm` 0.85rem · `--text-base` 1rem · `--text-md` 1.25rem · `--text-lg` 1.5625rem · `--text-xl` 1.9531rem · `--text-2xl` 2.4414rem · `--text-display` `clamp(2rem, 4vw + 0.75rem, 3.75rem)`.
+Escala (mayor tercera, 1.25): `--text-xs` 0.7rem · `--text-base` 1rem · `--text-md` 1.25rem · `--text-lg` 1.5625rem · `--text-2xl` 2.4414rem · `--text-display` `clamp(2rem, 4vw + 0.75rem, 3.75rem)`.
 
 ## Color (OKLCH)
 
@@ -32,11 +32,11 @@ Escala (mayor tercera, 1.25): `--text-xs` 0.7rem · `--text-sm` 0.85rem · `--te
 
 ## Espaciado
 
-Escala de 4 pt: `--space-3xs` 0.125rem · `--space-2xs` 0.25rem · `--space-xs` 0.5rem · `--space-sm` 0.75rem · `--space-md` 1rem · `--space-lg` 1.5rem · `--space-xl` 2.5rem · `--space-2xl` 4rem · `--space-3xl` 6rem.
+Escala de 4 pt: `--space-2xs` 0.25rem · `--space-xs` 0.5rem · `--space-sm` 0.75rem · `--space-md` 1rem · `--space-lg` 1.5rem · `--space-xl` 2.5rem · `--space-3xl` 6rem.
 
 ## Movimiento
 
-Quieto: una única secuencia de entrada, sin rebotes. `--ease-out` para entradas, `--ease-in-out` para cambios de estado. Con `prefers-reduced-motion: reduce` toda animación espacial se reduce a cambios de opacidad o se elimina.
+Quieto: una única secuencia de entrada, sin rebotes. Con `prefers-reduced-motion: reduce` toda animación espacial se reduce a cambios de opacidad o se elimina.
 
 ## Estados de interacción
 
