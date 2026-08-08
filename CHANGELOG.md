@@ -4,7 +4,12 @@ Todas las modificaciones notables de este proyecto se documentan en este archivo
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
 
-El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
+## [0.3.1] - 2026-08-08
+
+### Changed
+
+- Header: se elimina el enlace "Cómo funciona" y el enlace de GitHub pasa a un icono.
+- Footer: colophon recortado y centrado.
 
 ## [0.3.0] - 2026-08-08
 
