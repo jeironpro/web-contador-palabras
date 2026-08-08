@@ -61,12 +61,20 @@ function sync() {
 }
 
 /**
+ * Fija el texto del área de escritura, actualiza la interfaz y devuelve el foco.
+ * @param {string} text Nuevo contenido del área.
+ */
+function establecerTexto(text) {
+  elements.textarea.value = text;
+  sync();
+  elements.textarea.focus();
+}
+
+/**
  * Vacía el área de texto y restablece la interfaz.
  */
 function limpiar() {
-  elements.textarea.value = "";
-  sync();
-  elements.textarea.focus();
+  establecerTexto("");
 }
 
 /**
@@ -93,9 +101,7 @@ async function copiar() {
  * Carga el texto de ejemplo y actualiza la interfaz.
  */
 function cargarEjemplo() {
-  elements.textarea.value = SAMPLE_TEXT;
-  sync();
-  elements.textarea.focus();
+  establecerTexto(SAMPLE_TEXT);
 }
 
 /**
@@ -120,8 +126,7 @@ function abrirSelector() {
 async function cargarArchivo(file) {
   try {
     const text = await readTextFile(file);
-    elements.textarea.value = text;
-    sync();
+    establecerTexto(text);
   } catch {
     /* Archivo ilegible: se ignora y no se cambia el texto. */
   }

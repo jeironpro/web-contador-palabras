@@ -4,6 +4,18 @@ Todas las modificaciones notables de este proyecto se documentan en este archivo
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), y este proyecto respeta [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.3.2] - 2026-08-08
+
+### Removed
+
+- Tokens sin uso: `--text-sm`, `--text-xl`, `--text-3xl`, `--space-3xs`, `--space-2xl`, `--shadow-card`, `--shadow-lift`, `--ease-in`, `--ease-in-out`, `--dur-long` y `--shell`.
+- Clases CSS sin uso: `.text-area__hint` y `.visually-hidden`.
+- Referencias huérfanas en la sección principal: `id="como-funciona"` y `aria-labelledby="texto"`.
+
+### Changed
+
+- Refactor en `app.js`: helper `establecerTexto()` que unifica asignar texto, sincronizar y devolver el foco.
+
 ## [0.3.1] - 2026-08-08
 
 ### Changed
